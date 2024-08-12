@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Planner</title>
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.css" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        nav {
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+        }
+
+        .event-card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            padding: 2rem 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .event-card {
+            background-color: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .event-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .event-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .event-card-content {
+            padding: 1rem;
+        }
+
+        .event-card-content h5 {
+            margin-bottom: 0.75rem;
+            color: #111827;
+        }
+
+        .event-card-content p {
+            margin-bottom: 0.5rem;
+            color: #6b7280;
+        }
+
+        .event-card-content button {
+            background-color: #1d4ed8;
+            transition: background-color 0.2s ease-in-out;
+        }
+
+        .event-card-content button:hover {
+            background-color: #2563eb;
+        }
+
+        #logout_btn {
+            background-color: #dc2626;
+            color: #ffffff;
+            padding: 0.5rem 1rem;
+            border-radius: 0.25rem;
+            transition: background-color 0.2s ease-in-out;
+        }
+
+        #logout_btn:hover {
+            background-color: #ef4444;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container flex justify-between items-center">
+            <a href="https://flowbite.com" class="flex items-center space-x-3">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5cWqVsAUJhPPj4SFcsm9oIps84cUczrWV5Q&s" class="h-8" alt="Flowbite Logo" />
+                <span class="text-2xl font-semibold text-gray-900">EVENT PLANNER</span>
+            </a>
+            <div class="flex items-center space-x-6">
+                <a href="myEvents/index.html" class="text-sm text-gray-500 hover:underline">My Events</a>
+                <a href="/createEvent/index.html" class="text-sm text-gray-500 hover:underline">Create Event</a>
+                <a href="/profile/index.html">
+                    <img id="user_img" class="w-10 h-10 rounded-full hidden" src="https://png.pngitem.com/pimgs/s/294-2947257_interface-icons-user-avatar-profile-user-avatar-png.png" alt="User Avatar">
+                </a>
+                <a id="login_link" href="/auth/login/index.html" class="text-sm text-blue-600 hover:underline">Login</a>
+                <button id="logout_btn" class="hidden">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <div id="event_card_container" class="event-card-container">
+        <!-- Event cards will be dynamically inserted here -->
+    </div>
+
+    <script src="app.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
+</body>
+</html>

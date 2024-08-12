@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Event</title>
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f3f4f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .event-container {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .event-container h2 {
+            font-size: 24px;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            color: #1a202c;
+        }
+
+        .event-container label {
+            font-size: 0.875rem;
+            color: #4a5568;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .event-container input,
+        .event-container textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border-radius: 4px;
+            border: 1px solid #e2e8f0;
+            margin-bottom: 1rem;
+            font-size: 0.875rem;
+            color: #1a202c;
+        }
+
+        .event-container input:focus,
+        .event-container textarea:focus {
+            border-color: #1a73e8;
+            box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.25);
+            outline: none;
+        }
+
+        .event-container textarea {
+            resize: vertical;
+        }
+
+        .event-container button {
+            width: 100%;
+            background-color: #1a73e8;
+            color: white;
+            padding: 0.75rem;
+            border-radius: 4px;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .event-container button:hover {
+            background-color: #1669c1;
+        }
+    </style>
+</head>
+<body>
+    <div class="event-container">
+        <h2>Create New Event</h2>
+        <form id="event_form">
+            <div>
+                <label for="event_image">Event Image</label>
+                <input type="file" id="event_image" name="event_image" required>
+            </div>
+            <div>
+                <label for="event_title">Event Title</label>
+                <input type="text" id="event_title" name="event_title" placeholder="Enter event title" required>
+            </div>
+            <div>
+                <label for="event_description">Event Description</label>
+                <textarea id="event_description" name="event_description" placeholder="Enter event description" rows="4" required></textarea>
+            </div>
+            <div>
+                <label for="event_location">Event Location</label>
+                <input type="text" id="event_location" name="event_location" placeholder="Enter event location" required>
+            </div>
+            <div>
+                <label for="event_date">Event Date</label>
+                <input type="date" id="event_date" name="event_date" required>
+            </div>
+            <div>
+                <label for="event_time">Event Time</label>
+                <input type="time" id="event_time" name="event_time" required>
+            </div>
+            <div class="flex justify-center">
+                <button type="submit">Create Event</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="app.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
+</body>
+</html>
